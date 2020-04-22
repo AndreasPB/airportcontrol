@@ -1,9 +1,6 @@
 package gruppe3.airportcontrol.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Flymodel {
@@ -11,6 +8,9 @@ public class Flymodel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String model_navn;
+    @OneToOne
+    private Stoerrelse stoerrelse;
 
     public Flymodel(){}
 
@@ -20,5 +20,21 @@ public class Flymodel {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getModel_navn() {
+        return model_navn;
+    }
+
+    public void setModel_navn(String model_navn) {
+        this.model_navn = model_navn;
+    }
+
+    public Stoerrelse getStoerrelse() {
+        return stoerrelse;
+    }
+
+    public void setStoerrelse(Stoerrelse stoerrelse) {
+        this.stoerrelse = stoerrelse;
     }
 }

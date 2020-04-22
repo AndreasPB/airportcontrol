@@ -11,6 +11,7 @@ public class Stoerrelse {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+    private String stoerrelse;
 
     public Stoerrelse(){}
 
@@ -20,5 +21,13 @@ public class Stoerrelse {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getStoerrelse() {
+        return stoerrelse;
+    }
+
+    public void setStoerrelse(String stoerrelse) {
+        this.stoerrelse = stoerrelse;
     }
 }
