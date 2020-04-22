@@ -10,8 +10,12 @@ public class Afgange {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @ManyToOne
+    @OneToOne
     private Standplads standplads;
+    @OneToOne
+    private Afgange afgang;
+    @OneToOne
+    private Ankomst ankomst;
     private LocalDate dato;
     private LocalDate tid;
     private String destination;

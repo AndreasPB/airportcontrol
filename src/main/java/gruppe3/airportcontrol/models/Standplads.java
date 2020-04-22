@@ -22,4 +22,12 @@ public class Standplads {
     public void setId(long id) {
         this.id = id;
     }
+
+    public List<Afgange> getAfgange() {
+        return afgange;
+    }
+
+    public void setAfgange(List<Afgange> afgange) {
+        this.afgange = afgange;
+    }
 }

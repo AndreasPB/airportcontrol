@@ -2,10 +2,7 @@ package gruppe3.airportcontrol.models;
 
 import org.springframework.context.annotation.Bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Klargoering {
@@ -21,6 +18,10 @@ public class Klargoering {
     private int bag_ind;
     private int pass_ind;
     private int taxi_ud;
+    @OneToOne
+    private Afgange afgang;
+    @OneToOne
+    private Ankomst ankomst;
 
 
     public Klargoering(){}
@@ -87,5 +88,21 @@ public class Klargoering {
 
     public void setTaxi_ud(int taxi_ud) {
         this.taxi_ud = taxi_ud;
+    }
+
+    public Afgange getAfgang() {
+        return afgang;
+    }
+
+    public void setAfgang(Afgange afgang) {
+        this.afgang = afgang;
+    }
+
+    public Ankomst getAnkomst() {
+        return ankomst;
+    }
+
+    public void setAnkomst(Ankomst ankomst) {
+        this.ankomst = ankomst;
     }
 }
