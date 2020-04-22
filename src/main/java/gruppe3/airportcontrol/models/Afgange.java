@@ -10,8 +10,7 @@ public class Afgange {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne
-    private Standplads standplads;
+    private int standplads;
     @OneToOne
     private Afgange afgang;
     @OneToOne
@@ -31,12 +30,28 @@ public class Afgange {
         this.id = id;
     }
 
-    public Standplads getStandplads() {
+    public int getStandplads() {
         return standplads;
     }
 
-    public void setStandplads(Standplads standplads) {
+    public void setStandplads(int standplads) {
         this.standplads = standplads;
+    }
+
+    public Afgange getAfgang() {
+        return afgang;
+    }
+
+    public void setAfgang(Afgange afgang) {
+        this.afgang = afgang;
+    }
+
+    public Ankomst getAnkomst() {
+        return ankomst;
+    }
+
+    public void setAnkomst(Ankomst ankomst) {
+        this.ankomst = ankomst;
     }
 
     public LocalDate getDato() {

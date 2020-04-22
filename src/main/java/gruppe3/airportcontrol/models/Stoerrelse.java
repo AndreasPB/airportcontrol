@@ -1,9 +1,7 @@
 package gruppe3.airportcontrol.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Stoerrelse {
@@ -11,7 +9,8 @@ public class Stoerrelse {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    private String stoerrelse;
+    @OneToMany
+    private List<Stoerrelse> stoerrelse;
 
     public Stoerrelse(){}
 
@@ -23,11 +22,11 @@ public class Stoerrelse {
         this.id = id;
     }
 
-    public String getStoerrelse() {
+    public List<Stoerrelse> getStoerrelse() {
         return stoerrelse;
     }
 
-    public void setStoerrelse(String stoerrelse) {
+    public void setStoerrelse(List<Stoerrelse> stoerrelse) {
         this.stoerrelse = stoerrelse;
     }
 }

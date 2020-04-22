@@ -1,6 +1,7 @@
 package gruppe3.airportcontrol.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Flymodel {
@@ -9,7 +10,7 @@ public class Flymodel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String model_navn;
-    @OneToOne
+    @ManyToOne
     private Stoerrelse stoerrelse;
 
     public Flymodel(){}
