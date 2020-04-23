@@ -1,7 +1,6 @@
 package gruppe3.airportcontrol.models;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Fly_stoerrelse {
@@ -11,7 +10,8 @@ public class Fly_stoerrelse {
     private long id;
     @OneToOne
     private Fly_model fly_model;
-    //mangler taxi-aktivitets-tidsforbrug + andre aktiviteter
+    @OneToOne
+    private Bagage_aktivitet_tidsforbrug bagage_aktivitet_tidsforbrug;
 
     public Fly_stoerrelse(){}
 
@@ -29,5 +29,13 @@ public class Fly_stoerrelse {
 
     public void setFly_model(Fly_model fly_model) {
         this.fly_model = fly_model;
+    }
+
+    public Bagage_aktivitet_tidsforbrug getBagage_aktivitet_tidsforbrug() {
+        return bagage_aktivitet_tidsforbrug;
+    }
+
+    public void setBagage_aktivitet_tidsforbrug(Bagage_aktivitet_tidsforbrug bagage_aktivitet_tidsforbrug) {
+        this.bagage_aktivitet_tidsforbrug = bagage_aktivitet_tidsforbrug;
     }
 }
