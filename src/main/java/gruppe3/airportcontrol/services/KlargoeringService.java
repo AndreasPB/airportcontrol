@@ -29,7 +29,7 @@ public class KlargoeringService implements IService<Klargoering> {
     }
 
     @Override
-    public Optional<Klargoering>  findById(long id) throws NotFoundException {
+    public Optional<Klargoering> findById(long id) throws NotFoundException {
         try{
             return klargoeringRepository.findById(id);
         }catch (IllegalArgumentException ia){
