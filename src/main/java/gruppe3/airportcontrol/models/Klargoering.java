@@ -17,8 +17,6 @@ public class Klargoering {
     private int pass_ind;
     private int taxi_ud;
     @OneToOne
-    private Afgange afgang;
-    @OneToOne
     private Ankomst_afgang ankomstAfgang;
 
 
@@ -88,13 +86,6 @@ public class Klargoering {
         this.taxi_ud = taxi_ud;
     }
 
-    public Afgange getAfgang() {
-        return afgang;
-    }
-
-    public void setAfgang(Afgange afgang) {
-        this.afgang = afgang;
-    }
 
     public Ankomst_afgang getAnkomstAfgang() {
         return ankomstAfgang;
