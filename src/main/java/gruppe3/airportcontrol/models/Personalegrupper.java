@@ -4,40 +4,48 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Personalegrupper {
+public class Personalegrupper
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long id_personalegrupper;
 
     private String personalegruppe;
     @OneToMany
-    private List<Brugere> brugerlist;
+    private List<Personale> personaleList;
 
-    public Personalegrupper() {
+    public Personalegrupper()
+    {
     }
 
-    public long getId() {
-        return id;
+    public long getId_personalegrupper()
+    {
+        return id_personalegrupper;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId_personalegrupper(long id_personalegrupper)
+    {
+        this.id_personalegrupper = id_personalegrupper;
     }
 
-    public String getPersonalegruppe() {
+    public String getPersonalegruppe()
+    {
         return personalegruppe;
     }
 
-    public void setPersonalegruppe(String personalegruppe) {
+    public void setPersonalegruppe(String personalegruppe)
+    {
         this.personalegruppe = personalegruppe;
     }
 
-    public List<Brugere> getBrugerlist() {
-        return brugerlist;
+    public List<Personale> getPersonaleList()
+    {
+        return personaleList;
     }
 
-    public void setBrugerlist(List<Brugere> brugerlist) {
-        this.brugerlist = brugerlist;
+    public void setPersonaleList(List<Personale> personaleList)
+    {
+        this.personaleList = personaleList;
     }
 }
