@@ -16,7 +16,7 @@ public class Fly {
     @OneToOne
     private Fly_model flymodel;
 
-    @OneToOne
+    @OneToOne(mappedBy = "fly")
     private Ankomst_afgang ankomstAfgang;
 
     public Fly(){}
