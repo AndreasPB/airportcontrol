@@ -7,7 +7,7 @@ public class Passagere_aktivitet_tidsforbrug
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_passagere_aktivitet_tidsforbrug;
+    private long id;
 
     private int passagere_tidsforbrug;
 
@@ -21,14 +21,14 @@ public class Passagere_aktivitet_tidsforbrug
     {
     }
 
-    public long getId_passagere_aktivitet_tidsforbrug()
+    public long getId()
     {
-        return id_passagere_aktivitet_tidsforbrug;
+        return id;
     }
 
-    public void setId_passagere_aktivitet_tidsforbrug(long id_passagere_aktivitet_tidsforbrug)
+    public void setId(long id)
     {
-        this.id_passagere_aktivitet_tidsforbrug = id_passagere_aktivitet_tidsforbrug;
+        this.id = id;
     }
 
     public int getPassagere_tidsforbrug()

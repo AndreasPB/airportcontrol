@@ -1,7 +1,6 @@
 package gruppe3.airportcontrol.models;
 
 import javax.persistence.*;
-import java.sql.Time;
 import java.time.LocalTime;
 
 @Entity
@@ -9,7 +8,7 @@ public class Personale_aktivitet
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_personale_aktivitet;
+    private long id;
 
     private LocalTime planlagt_personale_naboplads;
     private LocalTime planlagt_personale_egen_terminal;
@@ -28,14 +27,14 @@ public class Personale_aktivitet
     {
     }
 
-    public long getId_personale_aktivitet()
+    public long getId()
     {
-        return id_personale_aktivitet;
+        return id;
     }
 
-    public void setId_personale_aktivitet(long id_personale_aktivitet)
+    public void setId(long id)
     {
-        this.id_personale_aktivitet = id_personale_aktivitet;
+        this.id = id;
     }
 
     public LocalTime getPlanlagt_personale_naboplads()

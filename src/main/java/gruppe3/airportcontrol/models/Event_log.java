@@ -9,7 +9,7 @@ public class Event_log
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_event_log;
+    private long id;
     @Lob
     private String event;
     private LocalDate date_and_time;
@@ -17,14 +17,18 @@ public class Event_log
     @OneToMany
     private List<Personale> personaleList;
 
-    public long getId_event_log()
+    public Event_log()
     {
-        return id_event_log;
     }
 
-    public void setId_event_log(long id_event_log)
+    public long getId()
     {
-        this.id_event_log = id_event_log;
+        return id;
+    }
+
+    public void setId(long id)
+    {
+        this.id = id;
     }
 
     public String getEvent()
@@ -45,5 +49,15 @@ public class Event_log
     public void setDate_and_time(LocalDate date_and_time)
     {
         this.date_and_time = date_and_time;
+    }
+
+    public List<Personale> getPersonaleList()
+    {
+        return personaleList;
+    }
+
+    public void setPersonaleList(List<Personale> personaleList)
+    {
+        this.personaleList = personaleList;
     }
 }

@@ -7,7 +7,7 @@ public class Personale
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_personale;
+    private long id;
 
     private String personale_navn;
     private String personale_username;
@@ -22,14 +22,14 @@ public class Personale
     {
     }
 
-    public long getId_personale()
+    public long getId()
     {
-        return id_personale;
+        return id;
     }
 
-    public void setId_personale(long id_personale)
+    public void setId(long id)
     {
-        this.id_personale = id_personale;
+        this.id = id;
     }
 
     public String getPersonale_navn()

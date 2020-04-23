@@ -9,7 +9,7 @@ public class Personalegrupper
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_personalegrupper;
+    private long id;
 
     private String personalegruppe;
     @OneToMany
@@ -19,14 +19,14 @@ public class Personalegrupper
     {
     }
 
-    public long getId_personalegrupper()
+    public long getId()
     {
-        return id_personalegrupper;
+        return id;
     }
 
-    public void setId_personalegrupper(long id_personalegrupper)
+    public void setId(long id)
     {
-        this.id_personalegrupper = id_personalegrupper;
+        this.id = id;
     }
 
     public String getPersonalegruppe()
