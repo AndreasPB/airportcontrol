@@ -3,25 +3,13 @@ package gruppe3.airportcontrol.models;
 import javax.persistence.*;
 
 @Entity
-public class Bagage_aktivitet_tidsforbrug {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class Bagage_aktivitet_tidsforbrug extends BaseEntity {
 
     private int bagage_tidsforbrug;
     @OneToOne
     private Fly_stoerrelse fly_stoerrelse;
 
     public Bagage_aktivitet_tidsforbrug(){}
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public int getBagage_tidsforbrug() {
         return bagage_tidsforbrug;

@@ -12,6 +12,14 @@ public class Fly_stoerrelse {
     private Fly_model fly_model;
     @OneToOne
     private Bagage_aktivitet_tidsforbrug bagage_aktivitet_tidsforbrug;
+    @OneToOne
+    private Personale_aktivitet_tidsforbrug personale_aktivitet_tidsforbrug;
+
+    @OneToOne
+    private TaxiAktivitetTidsforbrug taxiAktivitetTidsforbrug;
+
+    @OneToOne
+    private Braendstof_aktivitet_tidsforbrug braendstof_aktivitet_tidsforbrug;
 
     public Fly_stoerrelse(){}
 
@@ -37,5 +45,29 @@ public class Fly_stoerrelse {
 
     public void setBagage_aktivitet_tidsforbrug(Bagage_aktivitet_tidsforbrug bagage_aktivitet_tidsforbrug) {
         this.bagage_aktivitet_tidsforbrug = bagage_aktivitet_tidsforbrug;
+    }
+
+    public Personale_aktivitet_tidsforbrug getPersonale_aktivitet_tidsforbrug() {
+        return personale_aktivitet_tidsforbrug;
+    }
+
+    public void setPersonale_aktivitet_tidsforbrug(Personale_aktivitet_tidsforbrug personale_aktivitet_tidsforbrug) {
+        this.personale_aktivitet_tidsforbrug = personale_aktivitet_tidsforbrug;
+    }
+
+    public TaxiAktivitetTidsforbrug getTaxiAktivitetTidsforbrug() {
+        return taxiAktivitetTidsforbrug;
+    }
+
+    public void setTaxiAktivitetTidsforbrug(TaxiAktivitetTidsforbrug taxiAktivitetTidsforbrug) {
+        this.taxiAktivitetTidsforbrug = taxiAktivitetTidsforbrug;
+    }
+
+    public Braendstof_aktivitet_tidsforbrug getBraendstof_aktivitet_tidsforbrug() {
+        return braendstof_aktivitet_tidsforbrug;
+    }
+
+    public void setBraendstof_aktivitet_tidsforbrug(Braendstof_aktivitet_tidsforbrug braendstof_aktivitet_tidsforbrug) {
+        this.braendstof_aktivitet_tidsforbrug = braendstof_aktivitet_tidsforbrug;
     }
 }

@@ -14,10 +14,24 @@ public class Ankomst_afgang {
     private int venteplads;
     private LocalDate dato;
     private LocalTime tid;
+    private String ank_afg;
     private String lufthavn_fra;
+    private String destination;
 
     @OneToOne
     private Fly fly;
+
+    @OneToOne
+    private TaxiAktivitet taxiAktivitet;
+
+    @OneToOne
+    private Bagage_aktivitet bagage_aktivitet;
+
+    @OneToOne
+    private Braendstof_aktivitet braendstof_aktivitet;
+
+    @OneToOne
+    private Personale_aktivitet personale_aktivitet;
 
     public Ankomst_afgang(){}
 
@@ -75,5 +89,53 @@ public class Ankomst_afgang {
 
     public void setFly(Fly fly) {
         this.fly = fly;
+    }
+
+    public String getAnk_afg() {
+        return ank_afg;
+    }
+
+    public void setAnk_afg(String ank_afg) {
+        this.ank_afg = ank_afg;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public TaxiAktivitet getTaxiAktivitet() {
+        return taxiAktivitet;
+    }
+
+    public void setTaxiAktivitet(TaxiAktivitet taxiAktivitet) {
+        this.taxiAktivitet = taxiAktivitet;
+    }
+
+    public Bagage_aktivitet getBagage_aktivitet() {
+        return bagage_aktivitet;
+    }
+
+    public void setBagage_aktivitet(Bagage_aktivitet bagage_aktivitet) {
+        this.bagage_aktivitet = bagage_aktivitet;
+    }
+
+    public Braendstof_aktivitet getBraendstof_aktivitet() {
+        return braendstof_aktivitet;
+    }
+
+    public void setBraendstof_aktivitet(Braendstof_aktivitet braendstof_aktivitet) {
+        this.braendstof_aktivitet = braendstof_aktivitet;
+    }
+
+    public Personale_aktivitet getPersonale_aktivitet() {
+        return personale_aktivitet;
+    }
+
+    public void setPersonale_aktivitet(Personale_aktivitet personale_aktivitet) {
+        this.personale_aktivitet = personale_aktivitet;
     }
 }
