@@ -2,22 +2,24 @@ package gruppe3.airportcontrol.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
-public class Ankomst {
+public class Ankomst_afgang {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private int standplads;
+    private int venteplads;
     private LocalDate dato;
-    private LocalDate tid;
-    private String indkommende_fra;
+    private LocalTime tid;
+    private String lufthavn_fra;
 
     @OneToOne
     private Fly fly;
 
-    public Ankomst(){}
+    public Ankomst_afgang(){}
 
     public long getId() {
         return id;
@@ -43,19 +45,35 @@ public class Ankomst {
         this.dato = dato;
     }
 
-    public LocalDate getTid() {
+    public LocalTime getTid() {
         return tid;
     }
 
-    public void setTid(LocalDate tid) {
+    public void setTid(LocalTime tid) {
         this.tid = tid;
     }
 
-    public String getIndkommende_fra() {
-        return indkommende_fra;
+    public String getLufthavn_fra() {
+        return lufthavn_fra;
     }
 
-    public void setIndkommende_fra(String indkommende_fra) {
-        this.indkommende_fra = indkommende_fra;
+    public void setLufthavn_fra(String indkommende_fra) {
+        this.lufthavn_fra = indkommende_fra;
+    }
+
+    public int getVenteplads() {
+        return venteplads;
+    }
+
+    public void setVenteplads(int venteplads) {
+        this.venteplads = venteplads;
+    }
+
+    public Fly getFly() {
+        return fly;
+    }
+
+    public void setFly(Fly fly) {
+        this.fly = fly;
     }
 }

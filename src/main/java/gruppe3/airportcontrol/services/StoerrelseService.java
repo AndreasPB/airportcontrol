@@ -1,25 +1,25 @@
 package gruppe3.airportcontrol.services;
 
-import gruppe3.airportcontrol.models.Stoerrelse;
+import gruppe3.airportcontrol.models.Fly_stoerrelse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class StoerrelseService implements IService<Stoerrelse> {
+public class StoerrelseService implements IService<Fly_stoerrelse> {
     @Override
-    public List<Stoerrelse> findAll() {
+    public List<Fly_stoerrelse> findAll() {
         return null;
     }
 
     @Override
-    public void save(Stoerrelse element) {
+    public void save(Fly_stoerrelse element) {
 
     }
 
     @Override
-    public Optional<Stoerrelse> findById(long id) {
+    public Optional<Fly_stoerrelse> findById(long id) {
         return null;
     }
 
