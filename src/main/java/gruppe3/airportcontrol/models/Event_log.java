@@ -13,10 +13,7 @@ public class Event_log
     @Lob
     private String event;
     private LocalDate date_and_time;
-
-    public Event_log() {
-    }
-
+    
     @OneToMany
     private List<Personale> personaleList;
 
