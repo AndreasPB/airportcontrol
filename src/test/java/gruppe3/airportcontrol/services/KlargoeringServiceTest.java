@@ -74,7 +74,6 @@ class KlargoeringServiceTest {
     @Test
     void findById() {
 
-
         Klargoering klargoering1 = new Klargoering();
         klargoering1.setId(1);
 
