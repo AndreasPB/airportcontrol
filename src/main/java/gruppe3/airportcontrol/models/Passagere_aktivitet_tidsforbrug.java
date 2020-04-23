@@ -1,10 +1,8 @@
 package gruppe3.airportcontrol.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
+@Entity
 public class Passagere_aktivitet_tidsforbrug
 {
     @Id

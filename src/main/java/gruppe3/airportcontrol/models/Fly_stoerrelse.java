@@ -21,6 +21,9 @@ public class Fly_stoerrelse {
     @OneToOne
     private Braendstof_aktivitet_tidsforbrug braendstof_aktivitet_tidsforbrug;
 
+    @OneToOne
+    private Passagere_aktivitet_tidsforbrug passagere_aktivitet_tidsforbrug;
+
     public Fly_stoerrelse(){}
 
     public long getId() {
@@ -69,5 +72,13 @@ public class Fly_stoerrelse {
 
     public void setBraendstof_aktivitet_tidsforbrug(Braendstof_aktivitet_tidsforbrug braendstof_aktivitet_tidsforbrug) {
         this.braendstof_aktivitet_tidsforbrug = braendstof_aktivitet_tidsforbrug;
+    }
+
+    public Passagere_aktivitet_tidsforbrug getPassagere_aktivitet_tidsforbrug() {
+        return passagere_aktivitet_tidsforbrug;
+    }
+
+    public void setPassagere_aktivitet_tidsforbrug(Passagere_aktivitet_tidsforbrug passagere_aktivitet_tidsforbrug) {
+        this.passagere_aktivitet_tidsforbrug = passagere_aktivitet_tidsforbrug;
     }
 }
