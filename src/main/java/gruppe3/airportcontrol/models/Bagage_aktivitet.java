@@ -4,11 +4,7 @@ import javax.persistence.*;
 import java.time.LocalTime;
 
 @Entity
-public class Bagage_aktivitet {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+public class Bagage_aktivitet extends BaseEntity {
 
     private LocalTime planlagt_bagage_ud;
     private LocalTime planlagt_bagage_ind;
@@ -18,14 +14,6 @@ public class Bagage_aktivitet {
     private Fly_stoerrelse fly_stoerrelse;
 
     public Bagage_aktivitet(){}
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public LocalTime getPlanlagt_bagage_ud() {
         return planlagt_bagage_ud;
