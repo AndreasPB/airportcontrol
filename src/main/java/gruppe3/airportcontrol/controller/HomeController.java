@@ -13,4 +13,9 @@ public class HomeController {
     public String index(Model model) {
         return ("index");
     }
+
+    @GetMapping("/oversigt")
+    public String oversigt(Model model) {
+        return ("oversigt");
+    }
 }
