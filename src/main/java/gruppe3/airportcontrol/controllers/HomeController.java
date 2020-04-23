@@ -5,6 +5,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+/**
+ * Controlleren er bare sat op for at kunne lave en demo af hjemmesiden
+ * @Andreas
+ */
+
 @Controller
 public class HomeController {
 
