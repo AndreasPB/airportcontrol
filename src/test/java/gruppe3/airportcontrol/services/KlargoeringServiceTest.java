@@ -3,6 +3,7 @@ package gruppe3.airportcontrol.services;
 import gruppe3.airportcontrol.models.Klargoering;
 import gruppe3.airportcontrol.repositories.InMemoryRepository;
 import gruppe3.airportcontrol.repositories.KlargoeringRepository;
+import javassist.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -72,6 +73,25 @@ class KlargoeringServiceTest {
 
     @Test
     void findById() {
+
+        Klargoering klargoering1 = new Klargoering();
+        klargoering1.setId(1);
+
+        when(klargoeringRepository.findById(1L)).thenReturn(Optional.of(klargoering1));
+
+        try {
+            Optional<Klargoering> klargoering2 = klargoeringService.findById(1);
+
+            assertEquals(Optional.of(klargoering1), klargoering2, "Henviser til det samme objekt" );
+            if(klargoering2.isPresent()){
+            assertEquals(1, klargoering2.get().getId(), "Id'et var sat til 1");}
+
+            verify(klargoeringRepository, times(1)).findById(1L);
+
+        }catch (NotFoundException nf){
+            System.out.println(nf);
+        }
+
     }
 
     @Test
