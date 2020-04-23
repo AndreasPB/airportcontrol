@@ -3,6 +3,7 @@ package gruppe3.airportcontrol.services;
 import gruppe3.airportcontrol.models.Klargoering;
 import gruppe3.airportcontrol.repositories.InMemoryRepository;
 import gruppe3.airportcontrol.repositories.KlargoeringRepository;
+import javassist.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -46,7 +47,6 @@ class KlargoeringServiceTest {
         // klargoeringList
         when(klargoeringRepository.findAll()).thenReturn(klargoeringList);
 
-
         List<Klargoering> alleKlargoeringer = klargoeringService.findAll();
         // Test om servicen returnerede det forventede
         assertEquals(2, alleKlargoeringer.size(), "Længden skal være 2");
@@ -60,9 +60,13 @@ class KlargoeringServiceTest {
 
     @Test
     void findById() {
+        
     }
 
     @Test
-    void deleteById() {
+    void deleteById() throws NotFoundException {
+        klargoeringService.deleteById(1);
+        verify(klargoeringRepository, times(1)).deleteById((long) 1);
+
     }
 }
