@@ -12,5 +12,6 @@ public class TaxiAktivitetTidsforbrug extends BaseEntity {
     @OneToOne
     private Fly_stoerrelse fly_stoerrelse;
 
-
+    public TaxiAktivitetTidsforbrug() {
+    }
 }
