@@ -1,9 +1,7 @@
 package gruppe3.airportcontrol.models;
 
-import org.springframework.ui.Model;
-
 import javax.persistence.*;
-import java.util.List;
+
 
 @Entity
 public class Fly {
@@ -21,7 +19,7 @@ public class Fly {
     @OneToOne
     private Ankomst ankomst;
     @OneToOne
-    private Afgange afgang;
+    private Afgange afgange;
 
     public Fly(){}
 
@@ -58,10 +56,10 @@ public class Fly {
     }
 
     public Afgange getAfgang() {
-        return afgang;
+        return afgange;
     }
 
-    public void setAfgang(Afgange afgang) {
-        this.afgang = afgang;
+    public void setAfgang(Afgange afgange) {
+        this.afgange = afgange;
     }
 }
