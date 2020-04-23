@@ -3,18 +3,45 @@ package gruppe3.airportcontrol.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class HomeController {
 
 
     @GetMapping("/")
-    public String index(Model model) {
-        return ("ground_crew_all");
+    public String login(Model model) {
+        return ("login");
     }
 
-    @GetMapping("/ground_crew_aktiviteter")
-    public String oversigt(Model model) {
-        return ("ground_crew_aktiviteter");
+    @PostMapping("/login")
+    public String login() {
+
+        return "redirect:/ground_crew_oversigt";
+    }
+
+    @GetMapping("/ground_crew_oversigt")
+    public String oversigtGroundCrew(Model model) {
+        return ("ground_crew_oversigt");
+    }
+
+    @GetMapping("/ground_crew_aktiviteter_arrival")
+    public String aktiviteterA(Model model) {
+        return ("ground_crew_aktiviteter_arrival");
+    }
+
+    @GetMapping("/ground_crew_aktiviteter_departure")
+    public String aktiviteterD(Model model) {
+        return ("ground_crew_aktiviteter_departure");
+    }
+
+    @GetMapping("/flyleder_jordkontrol_oversigt")
+    public String oversigtFlyleder(Model model) {
+        return ("flyleder_jordkontrol_oversigt");
+    }
+
+    @GetMapping("/flyleder_jordkontrol_aktiviteter")
+    public String aktiviteterlyleder(Model model) {
+        return ("flyleder_jordkontrol_aktiviteter");
     }
 }
