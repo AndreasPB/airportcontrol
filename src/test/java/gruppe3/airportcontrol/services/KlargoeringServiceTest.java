@@ -22,12 +22,16 @@ import static org.mockito.Mockito.*;
 class KlargoeringServiceTest {
     private KlargoeringService klargoeringService;
 
+    // @Mock angiver at vi vil lave en mock af klargoeringRepository
     @Mock
     KlargoeringRepository klargoeringRepository;
 
     @BeforeEach
     void setUp() {
+        // Alle mock annotationerne bliver initialiseret
         MockitoAnnotations.initMocks(this);
+        // Der bliver der lavet en instans af klargoeringService som får giver
+        // mocken fra før som parameter
         klargoeringService = new KlargoeringService(klargoeringRepository);
     }
 
@@ -38,11 +42,15 @@ class KlargoeringServiceTest {
         ArrayList<Klargoering> klargoeringList = new ArrayList<>();
         klargoeringList.add(klargoering1);
         klargoeringList.add(klargoering2);
-
+        // Mocken bliver sat op, så hver gang mockens metode "findAll()" bliver kaldt vil den returnere arraylist
+        // klargoeringList
         when(klargoeringRepository.findAll()).thenReturn(klargoeringList);
 
-        List<Optional> alleKlargoeringer = klargoeringService.findAll();
+
+        List<Klargoering> alleKlargoeringer = klargoeringService.findAll();
+        // Test om servicen returnerede det forventede
         assertEquals(2, alleKlargoeringer.size(), "Længden skal være 2");
+        // Test for at klagoeringsRepository.findAll() kun bliver kaldt en gang
         verify(klargoeringRepository, times(1)).findAll();
     }
 

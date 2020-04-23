@@ -1,6 +1,7 @@
 package gruppe3.airportcontrol.services;
 
 import gruppe3.airportcontrol.models.Klargoering;
+import gruppe3.airportcontrol.repositories.KlargoeringRepository;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,35 +12,30 @@ import java.util.Optional;
 
 @Service
 public class KlargoeringService implements IService<Klargoering> {
-    private JpaRepository jpaRepo;
+    private KlargoeringRepository klargoeringRepository;
 
-    public KlargoeringService(@Qualifier("klargoeringRepository") JpaRepository jpaRepo) {
-        this.jpaRepo = jpaRepo;
+    public KlargoeringService(@Qualifier("klargoeringRepository") KlargoeringRepository klargoeringRepository) {
+        this.klargoeringRepository = klargoeringRepository;
     }
 
     @Override
     public List<Klargoering> findAll() {
-        return jpaRepo.findAll();
+        return klargoeringRepository.findAll();
     }
 
     @Override
     public void save(Klargoering element) {
-        jpaRepo.save(element);
+        klargoeringRepository.save(element);
     }
 
     @Override
-    public Optional<Klargoering>  findById(long id) throws NotFoundException {
-        try{
-            return jpaRepo.findById(id);
-        }catch (IllegalArgumentException ia){
-            System.out.println(ia);
-            return Optional.empty();
-        }
+    public Klargoering findById(long id) throws NotFoundException {
+        return klargoeringRepository.findById(id).orElseThrow(() -> new NotFoundException("Not found"));
     }
 
     @Override
     public void deleteById(long id) throws NotFoundException {
-        jpaRepo.deleteById(id);
+        klargoeringRepository.deleteById(id);
 
     }
 }
