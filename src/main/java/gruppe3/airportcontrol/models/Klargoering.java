@@ -1,7 +1,5 @@
 package gruppe3.airportcontrol.models;
 
-import org.springframework.context.annotation.Bean;
-
 import javax.persistence.*;
 
 @Entity
@@ -21,7 +19,7 @@ public class Klargoering {
     @OneToOne
     private Afgange afgang;
     @OneToOne
-    private Ankomst ankomst;
+    private Ankomst_afgang ankomstAfgang;
 
 
     public Klargoering(){}
@@ -98,11 +96,11 @@ public class Klargoering {
         this.afgang = afgang;
     }
 
-    public Ankomst getAnkomst() {
-        return ankomst;
+    public Ankomst_afgang getAnkomstAfgang() {
+        return ankomstAfgang;
     }
 
-    public void setAnkomst(Ankomst ankomst) {
-        this.ankomst = ankomst;
+    public void setAnkomstAfgang(Ankomst_afgang ankomstAfgang) {
+        this.ankomstAfgang = ankomstAfgang;
     }
 }

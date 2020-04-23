@@ -1,25 +1,25 @@
 package gruppe3.airportcontrol.services;
 
-import gruppe3.airportcontrol.models.Ankomst;
+import gruppe3.airportcontrol.models.Ankomst_afgang;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AnkomstService implements IService<Ankomst> {
+public class AnkomstService implements IService<Ankomst_afgang> {
     @Override
-    public List<Ankomst> findAll() {
+    public List<Ankomst_afgang> findAll() {
         return null;
     }
 
     @Override
-    public void save(Ankomst element) {
+    public void save(Ankomst_afgang element) {
 
     }
 
     @Override
-    public Optional<Ankomst> findById(long id) {
+    public Optional<Ankomst_afgang> findById(long id) {
         return null;
     }
 
