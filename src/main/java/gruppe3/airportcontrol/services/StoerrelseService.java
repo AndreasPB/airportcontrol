@@ -4,6 +4,7 @@ import gruppe3.airportcontrol.models.Stoerrelse;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StoerrelseService implements IService<Stoerrelse> {
@@ -18,7 +19,7 @@ public class StoerrelseService implements IService<Stoerrelse> {
     }
 
     @Override
-    public Stoerrelse findById(long id) {
+    public Optional<Stoerrelse> findById(long id) {
         return null;
     }
 

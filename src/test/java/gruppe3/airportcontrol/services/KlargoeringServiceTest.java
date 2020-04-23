@@ -7,6 +7,7 @@ import javassist.NotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -56,6 +57,18 @@ class KlargoeringServiceTest {
 
     @Test
     void save() {
+
+        Klargoering klargoering = new Klargoering();
+        klargoering.setId(4);
+
+        when(klargoeringRepository.save(any(Klargoering.class))).thenReturn(klargoering);
+
+        klargoeringService.save(klargoering);
+
+        assertNotNull(klargoering, "Der er gemt et element");
+        assertEquals(4, klargoering.getId(), "Id'et er sat til 4");
+        verify(klargoeringRepository, times(1)).save(klargoering);
+
     }
 
     @Test
