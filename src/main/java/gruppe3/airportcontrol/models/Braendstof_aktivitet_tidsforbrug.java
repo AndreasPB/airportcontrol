@@ -11,6 +11,9 @@ public class Braendstof_aktivitet_tidsforbrug
 
     private int braendstof_tidsforbrug;
 
+    public Braendstof_aktivitet_tidsforbrug() {
+    }
+
     @OneToOne
     private Fly_stoerrelse fly_stoerrelse;
 
