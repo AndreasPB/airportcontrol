@@ -14,4 +14,20 @@ public class TaxiAktivitetTidsforbrug extends BaseEntity {
 
     public TaxiAktivitetTidsforbrug() {
     }
+
+    public TaxiAktivitet getTaxiAktivitet() {
+        return taxiAktivitet;
+    }
+
+    public void setTaxiAktivitet(TaxiAktivitet taxiAktivitet) {
+        this.taxiAktivitet = taxiAktivitet;
+    }
+
+    public Fly_stoerrelse getFly_stoerrelse() {
+        return fly_stoerrelse;
+    }
+
+    public void setFly_stoerrelse(Fly_stoerrelse fly_stoerrelse) {
+        this.fly_stoerrelse = fly_stoerrelse;
+    }
 }
