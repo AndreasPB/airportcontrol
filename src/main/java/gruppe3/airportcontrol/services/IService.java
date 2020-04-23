@@ -9,6 +9,6 @@ public interface IService<E> {
 
     List<E> findAll();
     void save(E element);
-    E findById(long id) throws NotFoundException;
+    Optional<E> findById(long id) throws NotFoundException;
     void deleteById(long id) throws NotFoundException;
 }

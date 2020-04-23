@@ -4,6 +4,7 @@ import gruppe3.airportcontrol.models.Ankomst;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class AnkomstService implements IService<Ankomst> {
@@ -18,7 +19,7 @@ public class AnkomstService implements IService<Ankomst> {
     }
 
     @Override
-    public Ankomst findById(long id) {
+    public Optional<Ankomst> findById(long id) {
         return null;
     }
 

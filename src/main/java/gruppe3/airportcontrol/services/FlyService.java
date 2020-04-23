@@ -20,7 +20,7 @@ public class FlyService implements IService<Fly> {
     }
 
     @Override
-    public Fly findById(long id) {
+    public Optional<Fly> findById(long id) {
         return null;
     }
 

@@ -4,6 +4,7 @@ import gruppe3.airportcontrol.models.Selskab;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SelskabService implements IService<Selskab> {
@@ -18,7 +19,7 @@ public class SelskabService implements IService<Selskab> {
     }
 
     @Override
-    public Selskab findById(long id) {
+    public Optional<Selskab> findById(long id) {
         return null;
     }
 

@@ -4,6 +4,7 @@ import gruppe3.airportcontrol.models.Flymodel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FlymodelService implements IService<Flymodel> {
@@ -18,7 +19,7 @@ public class FlymodelService implements IService<Flymodel> {
     }
 
     @Override
-    public Flymodel findById(long id) {
+    public Optional<Flymodel> findById(long id) {
         return null;
     }
 
