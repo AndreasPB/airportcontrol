@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class personalegrupper
+public class Personalegrupper
 {
 
     @Id
@@ -13,9 +13,9 @@ public class personalegrupper
 
     private String personalegruppe;
     @OneToMany
-    private List<personale> personaleList;
+    private List<Personale> personaleList;
 
-    public personalegrupper()
+    public Personalegrupper()
     {
     }
 
@@ -39,12 +39,12 @@ public class personalegrupper
         this.personalegruppe = personalegruppe;
     }
 
-    public List<personale> getPersonaleList()
+    public List<Personale> getPersonaleList()
     {
         return personaleList;
     }
 
-    public void setPersonaleList(List<personale> personaleList)
+    public void setPersonaleList(List<Personale> personaleList)
     {
         this.personaleList = personaleList;
     }

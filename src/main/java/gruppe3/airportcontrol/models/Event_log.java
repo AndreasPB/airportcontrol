@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-public class event_log
+public class Event_log
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class event_log
     private LocalDate date_and_time;
 
     @OneToMany
-    private List<personale> personaleList;
+    private List<Personale> personaleList;
 
     public long getId_event_log()
     {

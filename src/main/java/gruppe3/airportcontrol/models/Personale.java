@@ -3,7 +3,7 @@ package gruppe3.airportcontrol.models;
 import javax.persistence.*;
 
 @Entity
-public class personale
+public class Personale
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,11 +14,11 @@ public class personale
     private String personale_password;
 
     @ManyToOne
-    private personalegrupper personalegrupper;
+    private Personalegrupper personalegrupper;
     @ManyToOne
-    private event_log event_log;
+    private Event_log event_log;
 
-    public personale()
+    public Personale()
     {
     }
 
@@ -62,22 +62,22 @@ public class personale
         this.personale_password = personale_password;
     }
 
-    public gruppe3.airportcontrol.models.personalegrupper getPersonalegrupper()
+    public Personalegrupper getPersonalegrupper()
     {
         return personalegrupper;
     }
 
-    public void setPersonalegrupper(gruppe3.airportcontrol.models.personalegrupper personalegrupper)
+    public void setPersonalegrupper(Personalegrupper personalegrupper)
     {
         this.personalegrupper = personalegrupper;
     }
 
-    public gruppe3.airportcontrol.models.event_log getEvent_log()
+    public Event_log getEvent_log()
     {
         return event_log;
     }
 
-    public void setEvent_log(gruppe3.airportcontrol.models.event_log event_log)
+    public void setEvent_log(Event_log event_log)
     {
         this.event_log = event_log;
     }

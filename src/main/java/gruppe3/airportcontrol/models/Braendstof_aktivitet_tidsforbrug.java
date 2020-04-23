@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Time;
 
 @Entity
-public class braendstof_aktivitet_tidsforbrug
+public class Braendstof_aktivitet_tidsforbrug
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +13,7 @@ public class braendstof_aktivitet_tidsforbrug
     private int braendstof_tidsforbrug;
 
     @OneToOne
-    private fly_stoerrelse fly_stoerrelse;
+    private Fly_stoerrelse fly_stoerrelse;
 
     public long getId_braendstof_aktivitet_tidsforbrug()
     {

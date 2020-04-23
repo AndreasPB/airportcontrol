@@ -3,7 +3,7 @@ package gruppe3.airportcontrol.models;
 import javax.persistence.*;
 
 @Entity
-public class personale_aktivitet_tidsforbrug
+public class Personale_aktivitet_tidsforbrug
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,16 +12,16 @@ public class personale_aktivitet_tidsforbrug
     private int personale_tidsforbrug;
 
     @OneToOne
-    private personale_aktivitet personale_aktivitet;
+    private Personale_aktivitet personale_aktivitet;
 
     @OneToOne
-    private fly_stoerrelse fly_stoerrelse;
+    private Fly_stoerrelse fly_stoerrelse;
 
-    public personale_aktivitet_tidsforbrug()
+    public Personale_aktivitet_tidsforbrug()
     {
     }
 
-    public personale_aktivitet_tidsforbrug(int personale_tidsforbrug)
+    public Personale_aktivitet_tidsforbrug(int personale_tidsforbrug)
     {
         this.personale_tidsforbrug = personale_tidsforbrug;
     }
