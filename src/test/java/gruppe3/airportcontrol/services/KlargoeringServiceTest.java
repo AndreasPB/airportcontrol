@@ -57,7 +57,6 @@ class KlargoeringServiceTest {
 
     @Test
     void save() {
-
         Klargoering klargoering = new Klargoering();
         klargoering.setId(4);
 
@@ -68,39 +67,30 @@ class KlargoeringServiceTest {
         assertNotNull(klargoering, "Der er gemt et element");
         assertEquals(4, klargoering.getId(), "Id'et er sat til 4");
         verify(klargoeringRepository, times(1)).save(klargoering);
-
     }
 
     @Test
-    void findById() {
-
-
+    void findById() throws NotFoundException {
         Klargoering klargoering1 = new Klargoering();
         klargoering1.setId(1);
-
         when(klargoeringRepository.findById(1L)).thenReturn(Optional.of(klargoering1));
 
-        try {
-            Optional<Klargoering> klargoering2 = klargoeringService.findById(1);
+        Optional<Klargoering> klargoering2 = klargoeringService.findById(1);
+        assertEquals(Optional.of(klargoering1), klargoering2, "Henviser til det samme objekt" );
+        if(klargoering2.isPresent()){
+            assertEquals(1, klargoering2.get().getId(), "Id'et var sat til 1");
+        }
+        verify(klargoeringRepository, times(1)).findById(1L);
 
-            assertEquals(Optional.of(klargoering1), klargoering2, "Henviser til det samme objekt" );
-            if(klargoering2.isPresent()){
-                assertEquals(1, klargoering2.get().getId(), "Id'et var sat til 1");}
-
-            verify(klargoeringRepository, times(1)).findById(1L);
-
-        }catch (NotFoundException nf){
-            System.out.println(nf);
+        NotFoundException e = assertThrows(NotFoundException.class, () -> klargoeringService.findById(-1));
+        String expectedMessage = "Not found";
+        String actualMessage = e.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
         }
 
-
-        
-    }
-
     @Test
-    void deleteById() throws NotFoundException {
+    void deleteById() {
         klargoeringService.deleteById(1);
-        verify(klargoeringRepository, times(1)).deleteById((long) 1);
-
+        verify(klargoeringRepository, times(1)).deleteById(1L);
     }
 }
