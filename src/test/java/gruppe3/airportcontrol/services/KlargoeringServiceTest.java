@@ -41,7 +41,7 @@ class KlargoeringServiceTest {
 
         when(klargoeringRepository.findAll()).thenReturn(klargoeringList);
 
-        List<Optional> alleKlargoeringer = klargoeringService.findAll();
+        List<Klargoering> alleKlargoeringer = klargoeringService.findAll();
         assertEquals(2, alleKlargoeringer.size(), "Længden skal være 2");
         verify(klargoeringRepository, times(1)).findAll();
     }
