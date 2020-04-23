@@ -11,8 +11,8 @@ public class Selskab {
     private long id;
     private String selskab_navn;
     private String selskab_kode;
-    @OneToMany
-    private List<Fly> mangeFly;
+    @OneToOne
+    private Fly fly;
 
     public Selskab(){}
 
@@ -40,11 +40,11 @@ public class Selskab {
         this.selskab_kode = selskab_kode;
     }
 
-    public List<Fly> getMangeFly() {
-        return mangeFly;
+    public Fly getFly() {
+        return fly;
     }
 
-    public void setMangeFly(List<Fly> mangeFly) {
-        this.mangeFly = mangeFly;
+    public void setFly(Fly fly) {
+        this.fly = fly;
     }
 }
