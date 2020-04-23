@@ -1,7 +1,9 @@
 package gruppe3.airportcontrol.models;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class TaxiAktivitetTidsforbrug extends BaseEntity {
@@ -11,6 +13,9 @@ public class TaxiAktivitetTidsforbrug extends BaseEntity {
 
     @OneToOne
     private Fly_stoerrelse fly_stoerrelse;
+
+    @Column(name = "taxi_tidsforbrug")
+    private int taxiTidsforbrug;
 
     public TaxiAktivitetTidsforbrug() {
     }
