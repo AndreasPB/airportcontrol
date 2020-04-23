@@ -10,11 +10,11 @@ public class Afgange {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @OneToOne
+    private Fly fly;
+
     private int standplads;
-    @OneToOne
-    private Afgange afgang;
-    @OneToOne
-    private Ankomst ankomst;
+
     private LocalDate dato;
     private LocalDate tid;
     private String destination;
@@ -37,20 +37,12 @@ public class Afgange {
         this.standplads = standplads;
     }
 
-    public Afgange getAfgang() {
-        return afgang;
+    public Fly getFly() {
+        return fly;
     }
 
-    public void setAfgang(Afgange afgang) {
-        this.afgang = afgang;
-    }
-
-    public Ankomst getAnkomst() {
-        return ankomst;
-    }
-
-    public void setAnkomst(Ankomst ankomst) {
-        this.ankomst = ankomst;
+    public void setFly(Fly fly) {
+        this.fly = fly;
     }
 
     public LocalDate getDato() {
