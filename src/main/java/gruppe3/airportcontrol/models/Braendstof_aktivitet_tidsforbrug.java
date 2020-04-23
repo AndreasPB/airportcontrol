@@ -1,7 +1,6 @@
 package gruppe3.airportcontrol.models;
 
 import javax.persistence.*;
-import java.sql.Time;
 
 @Entity
 public class Braendstof_aktivitet_tidsforbrug
