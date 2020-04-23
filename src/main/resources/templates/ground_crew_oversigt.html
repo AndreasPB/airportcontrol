@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap 4 Website Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div th:insert="fragments/top_menu"></div>
+
+<div class="container-xl" style="margin-top:30px">
+    <h2>Oversigt</h2><br>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Dato</th>
+            <th scope="col">Arr/Dep</th>
+            <th scope="col">Rutenr.</th>
+            <th scope="col">STA/STD</th>
+            <th scope="col">A/C</th>
+            <th scope="col">Flystørrelse</th>
+            <th scope="col">Org./Des.</th>
+            <th scope="col">Knapper</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>19/09/2019</td>
+            <td>A</td>
+            <td>D8 3563</td>
+            <td>00:10</td>
+            <td>73H</td>
+            <td>Mindre</td>
+            <td>KRK</td>
+            <td><a href="/ground_crew_aktiviteter_arrival">
+                <button type="button" class="btn btn-secondary btn-sm">Knap</button>
+            </a></td>
+        </tr>
+        <tr>
+            <td>19/09/2019</td>
+            <td>A</td>
+            <td>D8 3563</td>
+            <td>00:10</td>
+            <td>73H</td>
+            <td>Mindre</td>
+            <td>KRK</td>
+            <td><a href="/ground_crew_aktiviteter_arrival">
+                <button type="button" class="btn btn-secondary btn-sm">Knap</button>
+            </a></td>
+        </tr>
+        <tr>
+            <td>19/09/2019</td>
+            <td>A</td>
+            <td>D8 3563</td>
+            <td>00:10</td>
+            <td>73H</td>
+            <td>Mindre</td>
+            <td>KRK</td>
+            <td><a href="/ground_crew_aktiviteter_arrival">
+                <button type="button" class="btn btn-secondary btn-sm">Knap</button>
+            </a></td>
+        </tr>
+        <tr>
+            <td>19/09/2019</td>
+            <td>D</td>
+            <td>SU 2497</td>
+            <td>00:10</td>
+            <td>73H</td>
+            <td>Mindre</td>
+            <td>SVO</td>
+            <td><a href="/ground_crew_aktiviteter_departure">
+                <button type="button" class="btn btn-secondary btn-sm">Knap</button>
+            </a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
