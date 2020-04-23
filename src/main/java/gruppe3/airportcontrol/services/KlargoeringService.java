@@ -14,7 +14,7 @@ import java.util.Optional;
 public class KlargoeringService implements IService<Klargoering> {
     private KlargoeringRepository klargoeringRepository;
 
-    public KlargoeringService(@Qualifier("klargoeringRepository") KlargoeringRepository klargoeringRepository) {
+    public KlargoeringService(KlargoeringRepository klargoeringRepository) {
         this.klargoeringRepository = klargoeringRepository;
     }
 
@@ -33,15 +33,12 @@ public class KlargoeringService implements IService<Klargoering> {
         try{
             return klargoeringRepository.findById(id);
         }catch (IllegalArgumentException ia){
-            System.out.println(ia);
-            return Optional.empty();
+            throw new NotFoundException("Not found");
         }
-
     }
 
     @Override
-    public void deleteById(long id) throws NotFoundException {
+    public void deleteById(long id) {
         klargoeringRepository.deleteById(id);
-
     }
 }
