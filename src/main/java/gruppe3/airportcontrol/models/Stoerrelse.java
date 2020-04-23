@@ -7,10 +7,8 @@ import java.util.List;
 public class Stoerrelse {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @OneToMany
-    private List<Stoerrelse> stoerrelse;
 
     public Stoerrelse(){}
 
@@ -22,11 +20,5 @@ public class Stoerrelse {
         this.id = id;
     }
 
-    public List<Stoerrelse> getStoerrelse() {
-        return stoerrelse;
-    }
 
-    public void setStoerrelse(List<Stoerrelse> stoerrelse) {
-        this.stoerrelse = stoerrelse;
-    }
 }

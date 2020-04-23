@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Afgange {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private int standplads;
@@ -18,7 +18,6 @@ public class Afgange {
     private LocalDate dato;
     private LocalDate tid;
     private String destination;
-
 
     public Afgange(){}
 

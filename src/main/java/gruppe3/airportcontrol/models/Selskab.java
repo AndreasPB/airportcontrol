@@ -7,7 +7,7 @@ import java.util.List;
 public class Selskab {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String selskab_navn;
     private String selskab_kode;

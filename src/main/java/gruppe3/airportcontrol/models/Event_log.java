@@ -8,7 +8,7 @@ import java.util.List;
 public class Event_log {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Lob
     private String event;

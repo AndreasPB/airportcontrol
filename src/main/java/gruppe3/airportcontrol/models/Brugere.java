@@ -7,7 +7,7 @@ import java.util.List;
 public class Brugere {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String bruger_navn;
