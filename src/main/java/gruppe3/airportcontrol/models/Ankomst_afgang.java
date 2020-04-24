@@ -1,5 +1,7 @@
 package gruppe3.airportcontrol.models;
 
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -10,7 +12,9 @@ public class Ankomst_afgang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Nullable
     private int standplads;
+    @Nullable
     private int venteplads;
     private LocalDate dato;
     private LocalTime tid;
