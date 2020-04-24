@@ -5,10 +5,12 @@ import gruppe3.airportcontrol.models.Klargoering;
 import gruppe3.airportcontrol.repositories.BraendstofAktivitetRepository;
 import gruppe3.airportcontrol.repositories.KlargoeringRepository;
 import javassist.NotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class BraendstofAktivitetService implements IService<Braendstof_aktivitet>
 {
     private BraendstofAktivitetRepository braendstofAktivitetRepository;

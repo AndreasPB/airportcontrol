@@ -8,6 +8,9 @@ public class Fly_stoerrelse {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    private String stoerrelse;
+
     @OneToOne
     private Fly_model fly_model;
     @OneToOne
@@ -25,6 +28,16 @@ public class Fly_stoerrelse {
     private Passagere_aktivitet_tidsforbrug passagere_aktivitet_tidsforbrug;
 
     public Fly_stoerrelse(){}
+
+    public String getStoerrelse()
+    {
+        return stoerrelse;
+    }
+
+    public void setStoerrelse(String stoerrelse)
+    {
+        this.stoerrelse = stoerrelse;
+    }
 
     public long getId() {
         return id;

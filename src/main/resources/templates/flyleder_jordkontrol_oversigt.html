@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Flyleder Jordkontrol Oversigt</title>
     <div th:insert="fragments/header"></div>
@@ -17,31 +17,37 @@
             <th scope="col">Selskab</th>
             <th scope="col">Code</th>
             <th scope="col">Arr/Dep</th>
+            <th scope="col">Tidspunkt</th>
             <th scope="col">P landing</th>
             <th scope="col">P taxi fra parkering</th>
             <th scope="col">Org./Des.</th>
             <th scope="col">A/C</th>
             <th scope="col">Flystørrelse</th>
-            <th scope="col">Handling</th>
             <th scope="col">Knapper</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1</td>
-            <td>Adria Airways</td>
-            <td>JP</td>
-            <td>A</td>
-            <td>00:10</td>
-            <td>00:10</td>
-            <td>KRK</td>
-            <td>73H</td>
-            <td>mindre</td>
-            <td>SGH</td>
-            <td><a href="/ground_crew_aktiviteter_arrival">
-                <button type="button" class="btn btn-secondary btn-sm">Knap</button>
-            </a></td>
-        </tr>
+        <tr th:each="AnkomstAfgang : ${ankomstAfgang}">
+            <td th:text="${AnkomstAfgang.standplads}">Standplads</td>
+            <td th:text="${AnkomstAfgang.fly.selskab.selskab_navn}">Selskab</td>
+            <td th:text="${AnkomstAfgang.fly.selskab.selskab_kode}">Selskab kode</td>
+            <td th:text="${AnkomstAfgang.ank_afg}">Arr/Dep</td>
+            <td th:text="${AnkomstAfgang.tid}">Tidspunkt</td>
+            <td th:text="${AnkomstAfgang.taxiAktivitet.planlagtTaxiLandingInd}">P landing</td>
+            <td th:text="${AnkomstAfgang.taxiAktivitet.forventetTaxiLandingInd}">P taxi fra parkering</td>
+            <td th:text="${AnkomstAfgang.lufthavn_fra_eller_til}">Org./Des.</td>
+            <td th:text="${AnkomstAfgang.fly.flymodel.model_navn}">A/C</td>
+            <td th:text="${AnkomstAfgang.fly.flymodel.flystoerrelse.stoerrelse}">Flystørrelse</td>
+
+        <tr th:each="Selskab : ${selskab}">
+            <td th:text="${Selskab.selskab_navn}">Forventet start</td>
+            <td th:text="${Selskab.selskab_kode}">Forventet start</td>
+        <tr th:each="TaxiAktivitet : ${taxiAktivitet}">
+            <td th:text="${TaxiAktivitet.planlagtTaxiLandingInd}">Forventet Slut</td>
+        <tr th:each="ModelNavn : ${modelNavn}">
+            <td th:text="${ModelNavn.model_navn}">Status</td>
+        <tr th:each="FlyStoerrelse : ${flyStoerrelse}">
+            <td th:text="${FlyStoerrelse.stoerrelse}">Status</td>
         </tbody>
     </table>
 </div>

@@ -3,10 +3,12 @@ package gruppe3.airportcontrol.services;
 import gruppe3.airportcontrol.models.Personale_aktivitet_tidsforbrug;
 import gruppe3.airportcontrol.repositories.PersonaleAktivitetTidsforbrugRepository;
 import javassist.NotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PersonaleAktivitetTidsforbrugService implements IService<Personale_aktivitet_tidsforbrug>
 {
     private PersonaleAktivitetTidsforbrugRepository personaleAktivitetTidsforbrugRepository;
