@@ -47,12 +47,12 @@ public class Event_log
         this.event = event;
     }
 
-    public LocalDate getDate_and_time()
+    public Timestamp getDate_and_time()
     {
         return date_and_time;
     }
 
-    public void setDate_and_time(LocalDate date_and_time)
+    public void setDate_and_time(Timestamp date_and_time)
     {
         this.date_and_time = date_and_time;
     }
