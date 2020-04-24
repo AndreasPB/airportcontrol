@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Bootstrap 4 Website Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Ground Crew Akticiteter Arrival</title>
+    <div th:insert="fragments/header"></div>
 </head>
 <body>
 
@@ -54,15 +49,15 @@
             <td>00:22</td>
             <td>
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="taxi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         On time
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">On time</a>
-                        <a class="dropdown-item" href="#">2 min forsinket</a>
-                        <a class="dropdown-item" href="#">5 min forsinket</a>
-                        <a class="dropdown-item" href="#">7 min forsinket</a>
-                        <a class="dropdown-item" href="#">10+ min</a>
+                        <option class="dropdown-item" name="taxi" value="0">On time</option>
+                        <option class="dropdown-item" name="taxi" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="10">10+ min</option>
                     </div>
                 </div>
             </td>
@@ -95,15 +90,15 @@
             <td>00:27</td>
             <td>
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="passagererUd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         On time
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">On time</a>
-                        <a class="dropdown-item" href="#">2 min forsinket</a>
-                        <a class="dropdown-item" href="#">5 min forsinket</a>
-                        <a class="dropdown-item" href="#">7 min forsinket</a>
-                        <a class="dropdown-item" href="#">10+ min</a>
+                        <option class="dropdown-item" name="passagererUd" value="0">On time</option>
+                        <option class="dropdown-item" name="passagererUd" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="passagererUd" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="passagererUd" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="passagererUd" value="10">10+ min</option>
                     </div>
                 </div>
             </td>
@@ -136,15 +131,15 @@
             <td>00:32</td>
             <td>
                 <div class="dropdown">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="bagageUd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     On time
                 </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">On time</a>
-                    <a class="dropdown-item" href="#">2 min forsinket</a>
-                    <a class="dropdown-item" href="#">5 min forsinket</a>
-                    <a class="dropdown-item" href="#">7 min forsinket</a>
-                    <a class="dropdown-item" href="#">10+ min</a>
+                <div class="dropdown-menu" id="vedIkke">
+                    <option class="dropdown-item" name="bagageUd" value="0">On time</option>
+                    <option class="dropdown-item" name="bagageUd" value="2">2 min forsinket</option>
+                    <option class="dropdown-item" name="bagageUd" value="5">5 min forsinket</option>
+                    <option class="dropdown-item" name="bagageUd" value="7">7 min forsinket</option>
+                    <option class="dropdown-item" name="bagageUd" value="10">10+ min</option>
                 </div>
             </div>
             </td>
@@ -152,6 +147,33 @@
         </tbody>
     </table>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(".dropdown-item").click(function () {
 
+        // Tager data fra knappen
+        let dropdownValue = $(this).attr("value");
+        let dropdownText = $(this).text();
+        let dropdownName = $(this).attr("name");
+        let dropdownId = '#' + dropdownName;
+
+        // Fejlfinding
+        console.log(dropdownValue);
+        console.log(dropdownText);
+        console.log(dropdownName);
+        console.log(dropdownId);
+
+        // Skal ikke g're noget hvis Value = 0
+        if (dropdownValue === 0) {
+            $(dropdownId).html(dropdownText);
+        } else {
+            $(dropdownId).html(dropdownText);
+
+            // Skal ligge tiden til rækken under
+
+        }
+
+    })
+</script>
 </body>
 </html>
