@@ -35,7 +35,6 @@ public class KlargoeringService implements IService<Klargoering> {
         }catch (IllegalArgumentException ia){
             throw new NotFoundException("Not found");
         }
-        else return klargoering;
     }
 
     @Override
