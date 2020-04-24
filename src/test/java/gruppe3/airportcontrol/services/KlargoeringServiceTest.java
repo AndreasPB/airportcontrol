@@ -70,7 +70,8 @@ class KlargoeringServiceTest {
     }
 
     @Test
-    void findById() throws NotFoundException {
+    void findById() {
+
         Klargoering klargoering1 = new Klargoering();
         klargoering1.setId(1);
         when(klargoeringRepository.findById(1L)).thenReturn(Optional.of(klargoering1));

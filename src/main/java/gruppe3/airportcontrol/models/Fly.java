@@ -10,16 +10,14 @@ public class Fly {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
+    @OneToOne
     private Selskab selskab;
 
     @OneToOne
-    private Flymodel flymodel;
+    private Fly_model flymodel;
 
-    @OneToOne
-    private Ankomst ankomst;
-    @OneToOne
-    private Afgange afgange;
+    @OneToOne(mappedBy = "fly")
+    private Ankomst_afgang ankomstAfgang;
 
     public Fly(){}
 
@@ -39,27 +37,21 @@ public class Fly {
         this.selskab = selskab;
     }
 
-    public Flymodel getFlymodel() {
+    public Fly_model getFlymodel() {
         return flymodel;
     }
 
-    public void setFlymodel(Flymodel flymodel) {
+    public void setFlymodel(Fly_model flymodel) {
         this.flymodel = flymodel;
     }
 
-    public Ankomst getAnkomst() {
-        return ankomst;
+    public Ankomst_afgang getAnkomstAfgang() {
+        return ankomstAfgang;
     }
 
-    public void setAnkomst(Ankomst ankomst) {
-        this.ankomst = ankomst;
+    public void setAnkomstAfgang(Ankomst_afgang ankomstAfgang) {
+        this.ankomstAfgang = ankomstAfgang;
     }
 
-    public Afgange getAfgang() {
-        return afgange;
-    }
 
-    public void setAfgang(Afgange afgange) {
-        this.afgange = afgange;
-    }
 }
