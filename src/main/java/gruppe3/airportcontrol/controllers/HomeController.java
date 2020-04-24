@@ -67,10 +67,13 @@ public class HomeController
     public String oversigtFlyleder(Model model)
     {
         model.addAttribute("ankomstAfgang", ankomstAfgangService.findAll());
+        /*
         model.addAttribute("selskab", selskabService.findAll());
         model.addAttribute("taxiAktivitet", taxiAktivitetService.findAll());
         model.addAttribute("modelNavn", fly_modelService.findAll());
         model.addAttribute("flyStoerrelse", flyStoerrelseService.findAll());
+
+         */
         return ("flyleder_jordkontrol_oversigt");
     }
 

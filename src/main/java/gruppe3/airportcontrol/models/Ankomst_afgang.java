@@ -12,6 +12,7 @@ public class Ankomst_afgang {
     private long id;
     private int standplads;
     private int venteplads;
+    private String rutenummer;
     private LocalDate dato;
     private LocalTime tid;
     private String ank_afg;
@@ -33,6 +34,16 @@ public class Ankomst_afgang {
     private Personale_aktivitet personale_aktivitet;
 
     public Ankomst_afgang(){}
+
+    public String getRutenummer()
+    {
+        return rutenummer;
+    }
+
+    public void setRutenummer(String rutenummer)
+    {
+        this.rutenummer = rutenummer;
+    }
 
     public long getId() {
         return id;
