@@ -62,15 +62,10 @@ class KlargoeringServiceTest {
         Klargoering klargoering = new Klargoering();
         klargoering.setId(4);
 
-        /*
-           Når save(), beder vi repository om at returnere den instans af Klargoering,
-          ,som vi lige har lavet
-          */
+        //Når save(), beder vi repository om at returnere den instans af Klargoering, lige lavet
         when(klargoeringRepository.save(any(Klargoering.class))).thenReturn(klargoering);
 
-        /*
-          Metoden i service testes. Assertions tjekker, om resultatet er det forventede.
-         */
+        //Metoden i service testes. Assertions tjekker, om resultatet er det forventede.
         klargoeringService.save(klargoering);
 
         assertNotNull(klargoering, "Der er gemt et element");
@@ -112,7 +107,14 @@ class KlargoeringServiceTest {
 
     @Test
     void deleteById() {
+
+        Klargoering klargoering1 = new Klargoering();
+        klargoering1.setId(1);
+
+        when(klargoeringRepository.findById(1L)).thenReturn(Optional.of(klargoering1));
+
         klargoeringService.deleteById(1);
+
         verify(klargoeringRepository, times(1)).deleteById(1L);
 
     }
