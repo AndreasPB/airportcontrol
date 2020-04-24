@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:spring="http://java.sun.com/xml/ns/javaee">
 <head>
     <title>Ground Crew Akticiteter Arrival</title>
     <div th:insert="fragments/header"></div>
@@ -148,32 +148,8 @@
     </table>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script>
-    $(".dropdown-item").click(function () {
+<spring:url value="resources/static/buttons.js" var="buttonsJs" />
+<script src="${buttonsJs}"></script>
 
-        // Tager data fra knappen
-        let dropdownValue = $(this).attr("value");
-        let dropdownText = $(this).text();
-        let dropdownName = $(this).attr("name");
-        let dropdownId = '#' + dropdownName;
-
-        // Fejlfinding
-        console.log(dropdownValue);
-        console.log(dropdownText);
-        console.log(dropdownName);
-        console.log(dropdownId);
-
-        // Skal ikke g're noget hvis Value = 0
-        if (dropdownValue === 0) {
-            $(dropdownId).html(dropdownText);
-        } else {
-            $(dropdownId).html(dropdownText);
-
-            // Skal ligge tiden til rækken under
-
-        }
-
-    })
-</script>
 </body>
 </html>
