@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:spring="http://java.sun.com/xml/ns/javaee">
 <head>
-    <title>Ground Crew Akticiteter Arrival</title>
+    <title>Ground Crew Aktiviteter Arrival</title>
     <div th:insert="fragments/header"></div>
 </head>
 <body>
@@ -134,7 +134,7 @@
                 <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="bagageUd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     On time
                 </button>
-                <div class="dropdown-menu" id="vedIkke">
+                <div class="dropdown-menu">
                     <option class="dropdown-item" name="bagageUd" value="0">On time</option>
                     <option class="dropdown-item" name="bagageUd" value="2">2 min forsinket</option>
                     <option class="dropdown-item" name="bagageUd" value="5">5 min forsinket</option>
@@ -147,9 +147,6 @@
         </tbody>
     </table>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<spring:url value="resources/static/buttons.js" var="buttonsJs" />
-<script src="${buttonsJs}"></script>
-
+<script type="text/javascript" th:src="@{/js/dropdown.js}"></script>
 </body>
 </html>

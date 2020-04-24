@@ -7,12 +7,12 @@ $(".dropdown-item").click(function () {
     let dropdownId = '#' + dropdownName;
 
     // Fejlfinding
-    console.log(dropdownValue);
-    console.log(dropdownText);
-    console.log(dropdownName);
-    console.log(dropdownId);
+    // console.log(dropdownValue);
+    // console.log(dropdownText);
+    // console.log(dropdownName);
+    // console.log(dropdownId);
 
-    // Skal ikke g're noget hvis Value = 0
+    // Skal ikke gøre noget hvis Value = 0
     if (dropdownValue === 0) {
         $(dropdownId).html(dropdownText);
     } else {
@@ -21,5 +21,4 @@ $(".dropdown-item").click(function () {
         // Skal ligge tiden til rækken under
 
     }
-
-})
+});
