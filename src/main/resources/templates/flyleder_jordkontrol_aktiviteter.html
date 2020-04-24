@@ -1,10 +1,212 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:spring="http://java.sun.com/xml/ns/javaee">
 <head>
-    <title>Flyleder Jordkontrol Aktiviteter</title>
+    <title>Ground Crew Aktiviteter Arrival</title>
     <div th:insert="fragments/header"></div>
 </head>
 <body>
 
+<div th:insert="fragments/top_menu"></div>
+
+<div class="container-xl" style="margin-top:30px">
+    <h2>Aktiviteter Arrival</h2><br>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">Aktivitet</th>
+            <th scope="col">Varighed</th>
+            <th scope="col">Forventet start</th>
+            <th scope="col">Forventet slut</th>
+            <th scope="col">Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--
+        <tr th:each="taxi : ${taxi}">
+            <td th:text="Taxi">Række titel</td>
+            <td th:text="${taxi.varighed}">Varighed</td>
+            <td th:text="${taxi.forventetstart}">Forventet start</td>
+            <td th:text="${taxi.forventetslut}">Forventet Slut</td>
+            <td th:text="${taxi.status}">Status</td>
+            <td>
+            <form action="***INDSÆT REQUEST KALD ***" method="post">
+        <table>
+            <tr>
+                <td>
+                    *** INSÆT DROPDOWN ***
+                </td>
+                <td colspan="2"><button type="submit">Send</button> </td>
+            </tr>
+        </table>
+    </form>
+    </td>
+        </tr>
+        -->
+        <tr>
+            <td>Taxi</td>
+            <td>12 min</td>
+            <td>00:10</td>
+            <td>00:22</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="taxi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        On time
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <option class="dropdown-item" name="taxi" value="0">On time</option>
+                        <option class="dropdown-item" name="taxi" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="10">10+ min</option>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <!--
+        <tr th:each="passagerer : ${passagerer}">
+            <td th:text="Passagerer ud">Række titel</td>
+            <td th:text="${passagerer.varighed}">Varighed</td>
+            <td th:text="${passagerer.forventetstart}">Forventet start</td>
+            <td th:text="${passagerer.forventetslut}">Forventet Slut</td>
+            <td th:text="${passagerer.status}">Status</td>
+            <td>
+            <form action="***INDSÆT REQUEST KALD ***" method="post">
+        <table>
+            <tr>
+                <td>
+                    *** INSÆT DROPDOWN ***
+                </td>
+                <td colspan="2"><button type="submit">Send</button> </td>
+            </tr>
+        </table>
+    </form>
+    </td>
+        </tr>
+        -->
+        <tr>
+            <td>Passagerer ud</td>
+            <td>5 min</td>
+            <td>00:22</td>
+            <td>00:27</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="passagererUd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        On time
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <option class="dropdown-item" name="passagererUd" value="0">On time</option>
+                        <option class="dropdown-item" name="passagererUd" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="passagererUd" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="passagererUd" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="passagererUd" value="10">10+ min</option>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <!--
+        <tr th:each="bagage : ${bagage}">
+            <td th:text="Bagage ud">Række titel</td>
+            <td th:text="${bagage.varighed}">Varighed</td>
+            <td th:text="${bagage.forventetstart}">Forventet start</td>
+            <td th:text="${bagage.forventetslut}">Forventet Slut</td>
+            <td th:text="${bagage.status}">Status</td>
+            <td>
+            <form action="***INDSÆT REQUEST KALD ***" method="post">
+        <table>
+            <tr>
+                <td>
+                    *** INSÆT DROPDOWN ***
+                </td>
+                <td colspan="2"><button type="submit">Send</button> </td>
+            </tr>
+        </table>
+    </form>
+    </td>
+        </tr>
+        -->
+        <tr>
+            <td>Bagage ud</td>
+            <td>10 min</td>
+            <td>00:22</td>
+            <td>00:32</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="bagageUd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        On time
+                    </button>
+                    <div class="dropdown-menu">
+                        <option class="dropdown-item" name="bagageUd" value="0">On time</option>
+                        <option class="dropdown-item" name="bagageUd" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="bagageUd" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="bagageUd" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="bagageUd" value="10">10+ min</option>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Passagerer ind</td>
+            <td>5 min</td>
+            <td>00:22</td>
+            <td>00:27</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="passagererInd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        On time
+                    </button>
+                    <div class="dropdown-menu">
+                        <option class="dropdown-item" name="passagererInd" value="0">On time</option>
+                        <option class="dropdown-item" name="passagererInd" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="passagererInd" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="passagererInd" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="passagererInd" value="10">10+ min</option>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Bagage ind</td>
+            <td>10 min</td>
+            <td>00:22</td>
+            <td>00:32</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="bagageInd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        On time
+                    </button>
+                    <div class="dropdown-menu">
+                        <option class="dropdown-item" name="bagageInd" value="0">On time</option>
+                        <option class="dropdown-item" name="bagageInd" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="bagageInd" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="bagageInd" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="bagageInd" value="10">10+ min</option>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Taxi</td>
+            <td>12 min</td>
+            <td>00:32</td>
+            <td>00:44</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="taxi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        On time
+                    </button>
+                    <div class="dropdown-menu">
+                        <option class="dropdown-item" name="taxi" value="0">On time</option>
+                        <option class="dropdown-item" name="taxi" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="10">10+ min</option>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" th:src="@{/js/dropdown.js}"></script>
 </body>
 </html>

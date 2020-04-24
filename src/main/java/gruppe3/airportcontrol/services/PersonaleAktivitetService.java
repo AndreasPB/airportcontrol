@@ -5,10 +5,12 @@ import gruppe3.airportcontrol.models.Personale_aktivitet;
 import gruppe3.airportcontrol.repositories.PersonaleAktivitetRepository;
 import gruppe3.airportcontrol.repositories.PersonaleRepository;
 import javassist.NotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PersonaleAktivitetService implements IService<Personale_aktivitet>
 {
     private PersonaleAktivitetRepository personaleAktivitetRepository;

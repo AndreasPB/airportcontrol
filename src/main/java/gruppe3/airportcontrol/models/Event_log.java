@@ -1,6 +1,9 @@
 package gruppe3.airportcontrol.models;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -12,7 +15,10 @@ public class Event_log
     private long id;
     @Lob
     private String event;
-    private LocalDate date_and_time;
+
+    @Column(name = "CreatedDate", updatable=false)
+    @CreationTimestamp
+    private Timestamp date_and_time;
 
     @OneToMany
     private List<Personale> personaleList;
@@ -41,12 +47,12 @@ public class Event_log
         this.event = event;
     }
 
-    public LocalDate getDate_and_time()
+    public Timestamp getDate_and_time()
     {
         return date_and_time;
     }
 
-    public void setDate_and_time(LocalDate date_and_time)
+    public void setDate_and_time(Timestamp date_and_time)
     {
         this.date_and_time = date_and_time;
     }

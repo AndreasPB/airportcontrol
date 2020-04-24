@@ -12,11 +12,11 @@ public class Ankomst_afgang {
     private long id;
     private int standplads;
     private int venteplads;
+    private String rutenummer;
     private LocalDate dato;
     private LocalTime tid;
     private String ank_afg;
-    private String lufthavn_fra;
-    private String destination;
+    private String lufthavn_fra_eller_til;
 
     @OneToOne
     private Fly fly;
@@ -34,6 +34,16 @@ public class Ankomst_afgang {
     private Personale_aktivitet personale_aktivitet;
 
     public Ankomst_afgang(){}
+
+    public String getRutenummer()
+    {
+        return rutenummer;
+    }
+
+    public void setRutenummer(String rutenummer)
+    {
+        this.rutenummer = rutenummer;
+    }
 
     public long getId() {
         return id;
@@ -67,12 +77,12 @@ public class Ankomst_afgang {
         this.tid = tid;
     }
 
-    public String getLufthavn_fra() {
-        return lufthavn_fra;
+    public String getLufthavn_fra_eller_til() {
+        return lufthavn_fra_eller_til;
     }
 
-    public void setLufthavn_fra(String indkommende_fra) {
-        this.lufthavn_fra = indkommende_fra;
+    public void setLufthavn_fra_eller_til(String indkommende_fra) {
+        this.lufthavn_fra_eller_til = indkommende_fra;
     }
 
     public int getVenteplads() {
@@ -97,14 +107,6 @@ public class Ankomst_afgang {
 
     public void setAnk_afg(String ank_afg) {
         this.ank_afg = ank_afg;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(String destination) {
-        this.destination = destination;
     }
 
     public TaxiAktivitet getTaxiAktivitet() {

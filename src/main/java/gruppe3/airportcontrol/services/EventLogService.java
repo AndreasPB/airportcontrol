@@ -3,10 +3,12 @@ package gruppe3.airportcontrol.services;
 import gruppe3.airportcontrol.models.Event_log;
 import gruppe3.airportcontrol.repositories.EventLogRepository;
 import javassist.NotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class EventLogService implements IService<Event_log>
 {
     private EventLogRepository eventLogRepository;

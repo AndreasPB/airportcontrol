@@ -3,10 +3,12 @@ package gruppe3.airportcontrol.services;
 import gruppe3.airportcontrol.models.Personalegrupper;
 import gruppe3.airportcontrol.repositories.PersonalegrupperRepository;
 import javassist.NotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PersonalegrupperService implements IService<Personalegrupper>
 {
     private PersonalegrupperRepository personalegrupperRepository;
