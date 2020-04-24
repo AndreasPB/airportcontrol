@@ -1,13 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Bootstrap 4 Website Example</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Ground Crew Aktiviteter Departure</title>
+    <div th:insert="fragments/header"></div>
 </head>
 <body>
 
@@ -33,15 +28,15 @@
             <td>00:27</td>
             <td>
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="passagererInd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         On time
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">On time</a>
-                        <a class="dropdown-item" href="#">2 min forsinket</a>
-                        <a class="dropdown-item" href="#">5 min forsinket</a>
-                        <a class="dropdown-item" href="#">7 min forsinket</a>
-                        <a class="dropdown-item" href="#">10+ min</a>
+                    <div class="dropdown-menu">
+                        <option class="dropdown-item" name="passagererInd" value="0">On time</option>
+                        <option class="dropdown-item" name="passagererInd" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="passagererInd" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="passagererInd" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="passagererInd" value="10">10+ min</option>
                     </div>
                 </div>
             </td>
@@ -53,15 +48,15 @@
             <td>00:32</td>
             <td>
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="bagageInd" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         On time
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">On time</a>
-                        <a class="dropdown-item" href="#">2 min forsinket</a>
-                        <a class="dropdown-item" href="#">5 min forsinket</a>
-                        <a class="dropdown-item" href="#">7 min forsinket</a>
-                        <a class="dropdown-item" href="#">10+ min</a>
+                    <div class="dropdown-menu">
+                        <option class="dropdown-item" name="bagageInd" value="0">On time</option>
+                        <option class="dropdown-item" name="bagageInd" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="bagageInd" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="bagageInd" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="bagageInd" value="10">10+ min</option>
                     </div>
                 </div>
             </td>
@@ -73,15 +68,15 @@
             <td>00:44</td>
             <td>
                 <div class="dropdown">
-                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary btn-sm dropdown-toggle" value="0" type="button" id="taxi" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         On time
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">On time</a>
-                        <a class="dropdown-item" href="#">2 min forsinket</a>
-                        <a class="dropdown-item" href="#">5 min forsinket</a>
-                        <a class="dropdown-item" href="#">7 min forsinket</a>
-                        <a class="dropdown-item" href="#">10+ min</a>
+                    <div class="dropdown-menu">
+                        <option class="dropdown-item" name="taxi" value="0">On time</option>
+                        <option class="dropdown-item" name="taxi" value="2">2 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="5">5 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="7">7 min forsinket</option>
+                        <option class="dropdown-item" name="taxi" value="10">10+ min</option>
                     </div>
                 </div>
             </td>
@@ -89,6 +84,6 @@
         </tbody>
     </table>
 </div>
-
+<script type="text/javascript" th:src="@{/js/dropdown.js}"></script>
 </body>
 </html>
